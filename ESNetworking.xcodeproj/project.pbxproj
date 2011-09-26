@@ -1,0 +1,460 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F54FE4A31430E860008EC8CC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F54FE4A21430E860008EC8CC /* UIKit.framework */; };
+		F54FE4A51430E860008EC8CC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F54FE4A41430E860008EC8CC /* Foundation.framework */; };
+		F54FE4A71430E860008EC8CC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F54FE4A61430E860008EC8CC /* CoreGraphics.framework */; };
+		F54FE4AD1430E860008EC8CC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F54FE4AB1430E860008EC8CC /* InfoPlist.strings */; };
+		F54FE4AF1430E860008EC8CC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F54FE4AE1430E860008EC8CC /* main.m */; };
+		F54FE4B31430E860008EC8CC /* ESAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F54FE4B21430E860008EC8CC /* ESAppDelegate.m */; };
+		F54FE4CD1430E87D008EC8CC /* ESHTTPOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = F54FE4C21430E87D008EC8CC /* ESHTTPOperation.m */; };
+		F54FE4CE1430E87D008EC8CC /* ESJSONOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = F54FE4C41430E87D008EC8CC /* ESJSONOperation.m */; };
+		F54FE4D01430E87D008EC8CC /* ESRunLoopOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = F54FE4C91430E87D008EC8CC /* ESRunLoopOperation.m */; };
+		F54FE4D31430F082008EC8CC /* DemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F54FE4D21430F081008EC8CC /* DemoViewController.m */; };
+		F54FE4D51430F143008EC8CC /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F54FE4D41430F143008EC8CC /* libz.dylib */; };
+		F54FE4E614312158008EC8CC /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F54FE4E514312158008EC8CC /* WebViewController.m */; };
+		F54FE4EA1431237B008EC8CC /* SampleNetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F54FE4E91431237B008EC8CC /* SampleNetworkManager.m */; };
+		F54FE4ED14312C88008EC8CC /* TwitterSearchController.m in Sources */ = {isa = PBXBuildFile; fileRef = F54FE4EC14312C88008EC8CC /* TwitterSearchController.m */; };
+		F54FE512143137F1008EC8CC /* ESMutableDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = F54FE4F4143137F0008EC8CC /* ESMutableDictionary.m */; };
+		F54FE513143137F1008EC8CC /* ESBaseModelObject.m in Sources */ = {isa = PBXBuildFile; fileRef = F54FE4F7143137F1008EC8CC /* ESBaseModelObject.m */; };
+		F54FE514143137F1008EC8CC /* ESObjectMap.m in Sources */ = {isa = PBXBuildFile; fileRef = F54FE4F9143137F1008EC8CC /* ESObjectMap.m */; };
+		F54FE515143137F1008EC8CC /* ESObjectMapFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = F54FE4FB143137F1008EC8CC /* ESObjectMapFunctions.m */; };
+		F54FE517143137F1008EC8CC /* ESArrayPropertyMap.m in Sources */ = {isa = PBXBuildFile; fileRef = F54FE501143137F1008EC8CC /* ESArrayPropertyMap.m */; };
+		F54FE518143137F1008EC8CC /* ESBOOLPropertyMap.m in Sources */ = {isa = PBXBuildFile; fileRef = F54FE503143137F1008EC8CC /* ESBOOLPropertyMap.m */; };
+		F54FE519143137F1008EC8CC /* ESDoublePropertyMap.m in Sources */ = {isa = PBXBuildFile; fileRef = F54FE505143137F1008EC8CC /* ESDoublePropertyMap.m */; };
+		F54FE51A143137F1008EC8CC /* ESEpochDatePropertyMap.m in Sources */ = {isa = PBXBuildFile; fileRef = F54FE507143137F1008EC8CC /* ESEpochDatePropertyMap.m */; };
+		F54FE51B143137F1008EC8CC /* ESFloatPropertyMap.m in Sources */ = {isa = PBXBuildFile; fileRef = F54FE509143137F1008EC8CC /* ESFloatPropertyMap.m */; };
+		F54FE51C143137F1008EC8CC /* ESIntPropertyMap.m in Sources */ = {isa = PBXBuildFile; fileRef = F54FE50B143137F1008EC8CC /* ESIntPropertyMap.m */; };
+		F54FE51D143137F1008EC8CC /* ESObjectPropertyMap.m in Sources */ = {isa = PBXBuildFile; fileRef = F54FE50D143137F1008EC8CC /* ESObjectPropertyMap.m */; };
+		F54FE51E143137F1008EC8CC /* ESPropertyMap.m in Sources */ = {isa = PBXBuildFile; fileRef = F54FE50F143137F1008EC8CC /* ESPropertyMap.m */; };
+		F54FE51F143137F1008EC8CC /* ESURLPropertyMap.m in Sources */ = {isa = PBXBuildFile; fileRef = F54FE511143137F1008EC8CC /* ESURLPropertyMap.m */; };
+		F54FE52214313823008EC8CC /* Tweet.m in Sources */ = {isa = PBXBuildFile; fileRef = F54FE5211431381D008EC8CC /* Tweet.m */; };
+		F54FE52E14313A03008EC8CC /* ESDeclaredPropertyAttributes.m in Sources */ = {isa = PBXBuildFile; fileRef = F54FE52914313A03008EC8CC /* ESDeclaredPropertyAttributes.m */; };
+		F54FE52F14313A03008EC8CC /* ESDeclaredPropertyFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = F54FE52B14313A03008EC8CC /* ESDeclaredPropertyFunctions.m */; };
+		F54FE53014313A03008EC8CC /* NSObject+PropertyDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = F54FE52D14313A03008EC8CC /* NSObject+PropertyDictionary.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		F54FE49E1430E860008EC8CC /* ESNetworking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ESNetworking.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F54FE4A21430E860008EC8CC /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		F54FE4A41430E860008EC8CC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		F54FE4A61430E860008EC8CC /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		F54FE4AA1430E860008EC8CC /* ESNetworking-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ESNetworking-Info.plist"; sourceTree = "<group>"; };
+		F54FE4AC1430E860008EC8CC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		F54FE4AE1430E860008EC8CC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		F54FE4B01430E860008EC8CC /* ESNetworking-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ESNetworking-Prefix.pch"; sourceTree = "<group>"; };
+		F54FE4B11430E860008EC8CC /* ESAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ESAppDelegate.h; sourceTree = "<group>"; };
+		F54FE4B21430E860008EC8CC /* ESAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ESAppDelegate.m; sourceTree = "<group>"; };
+		F54FE4C11430E87D008EC8CC /* ESHTTPOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESHTTPOperation.h; sourceTree = "<group>"; };
+		F54FE4C21430E87D008EC8CC /* ESHTTPOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESHTTPOperation.m; sourceTree = "<group>"; };
+		F54FE4C31430E87D008EC8CC /* ESJSONOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESJSONOperation.h; sourceTree = "<group>"; };
+		F54FE4C41430E87D008EC8CC /* ESJSONOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESJSONOperation.m; sourceTree = "<group>"; };
+		F54FE4C51430E87D008EC8CC /* ESNetworkError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESNetworkError.h; sourceTree = "<group>"; };
+		F54FE4C81430E87D008EC8CC /* ESRunLoopOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESRunLoopOperation.h; sourceTree = "<group>"; };
+		F54FE4C91430E87D008EC8CC /* ESRunLoopOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESRunLoopOperation.m; sourceTree = "<group>"; };
+		F54FE4D11430F081008EC8CC /* DemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoViewController.h; sourceTree = "<group>"; };
+		F54FE4D21430F081008EC8CC /* DemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoViewController.m; sourceTree = "<group>"; };
+		F54FE4D41430F143008EC8CC /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		F54FE4E414312158008EC8CC /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
+		F54FE4E514312158008EC8CC /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
+		F54FE4E81431237B008EC8CC /* SampleNetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SampleNetworkManager.h; sourceTree = "<group>"; };
+		F54FE4E91431237B008EC8CC /* SampleNetworkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SampleNetworkManager.m; sourceTree = "<group>"; };
+		F54FE4EB14312C87008EC8CC /* TwitterSearchController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterSearchController.h; sourceTree = "<group>"; };
+		F54FE4EC14312C88008EC8CC /* TwitterSearchController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitterSearchController.m; sourceTree = "<group>"; };
+		F54FE4F3143137F0008EC8CC /* ESMutableDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESMutableDictionary.h; sourceTree = "<group>"; };
+		F54FE4F4143137F0008EC8CC /* ESMutableDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESMutableDictionary.m; sourceTree = "<group>"; };
+		F54FE4F6143137F1008EC8CC /* ESBaseModelObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESBaseModelObject.h; sourceTree = "<group>"; };
+		F54FE4F7143137F1008EC8CC /* ESBaseModelObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESBaseModelObject.m; sourceTree = "<group>"; };
+		F54FE4F8143137F1008EC8CC /* ESObjectMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESObjectMap.h; sourceTree = "<group>"; };
+		F54FE4F9143137F1008EC8CC /* ESObjectMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESObjectMap.m; sourceTree = "<group>"; };
+		F54FE4FA143137F1008EC8CC /* ESObjectMapFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESObjectMapFunctions.h; sourceTree = "<group>"; };
+		F54FE4FB143137F1008EC8CC /* ESObjectMapFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESObjectMapFunctions.m; sourceTree = "<group>"; };
+		F54FE4FC143137F1008EC8CC /* ESObjectProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESObjectProtocol.h; sourceTree = "<group>"; };
+		F54FE500143137F1008EC8CC /* ESArrayPropertyMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESArrayPropertyMap.h; sourceTree = "<group>"; };
+		F54FE501143137F1008EC8CC /* ESArrayPropertyMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESArrayPropertyMap.m; sourceTree = "<group>"; };
+		F54FE502143137F1008EC8CC /* ESBOOLPropertyMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESBOOLPropertyMap.h; sourceTree = "<group>"; };
+		F54FE503143137F1008EC8CC /* ESBOOLPropertyMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESBOOLPropertyMap.m; sourceTree = "<group>"; };
+		F54FE504143137F1008EC8CC /* ESDoublePropertyMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESDoublePropertyMap.h; sourceTree = "<group>"; };
+		F54FE505143137F1008EC8CC /* ESDoublePropertyMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESDoublePropertyMap.m; sourceTree = "<group>"; };
+		F54FE506143137F1008EC8CC /* ESEpochDatePropertyMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESEpochDatePropertyMap.h; sourceTree = "<group>"; };
+		F54FE507143137F1008EC8CC /* ESEpochDatePropertyMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESEpochDatePropertyMap.m; sourceTree = "<group>"; };
+		F54FE508143137F1008EC8CC /* ESFloatPropertyMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESFloatPropertyMap.h; sourceTree = "<group>"; };
+		F54FE509143137F1008EC8CC /* ESFloatPropertyMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESFloatPropertyMap.m; sourceTree = "<group>"; };
+		F54FE50A143137F1008EC8CC /* ESIntPropertyMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESIntPropertyMap.h; sourceTree = "<group>"; };
+		F54FE50B143137F1008EC8CC /* ESIntPropertyMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESIntPropertyMap.m; sourceTree = "<group>"; };
+		F54FE50C143137F1008EC8CC /* ESObjectPropertyMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESObjectPropertyMap.h; sourceTree = "<group>"; };
+		F54FE50D143137F1008EC8CC /* ESObjectPropertyMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESObjectPropertyMap.m; sourceTree = "<group>"; };
+		F54FE50E143137F1008EC8CC /* ESPropertyMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESPropertyMap.h; sourceTree = "<group>"; };
+		F54FE50F143137F1008EC8CC /* ESPropertyMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESPropertyMap.m; sourceTree = "<group>"; };
+		F54FE510143137F1008EC8CC /* ESURLPropertyMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESURLPropertyMap.h; sourceTree = "<group>"; };
+		F54FE511143137F1008EC8CC /* ESURLPropertyMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESURLPropertyMap.m; sourceTree = "<group>"; };
+		F54FE5201431381B008EC8CC /* Tweet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tweet.h; sourceTree = "<group>"; };
+		F54FE5211431381D008EC8CC /* Tweet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tweet.m; sourceTree = "<group>"; };
+		F54FE52814313A03008EC8CC /* ESDeclaredPropertyAttributes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESDeclaredPropertyAttributes.h; sourceTree = "<group>"; };
+		F54FE52914313A03008EC8CC /* ESDeclaredPropertyAttributes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESDeclaredPropertyAttributes.m; sourceTree = "<group>"; };
+		F54FE52A14313A03008EC8CC /* ESDeclaredPropertyFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESDeclaredPropertyFunctions.h; sourceTree = "<group>"; };
+		F54FE52B14313A03008EC8CC /* ESDeclaredPropertyFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESDeclaredPropertyFunctions.m; sourceTree = "<group>"; };
+		F54FE52C14313A03008EC8CC /* NSObject+PropertyDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+PropertyDictionary.h"; sourceTree = "<group>"; };
+		F54FE52D14313A03008EC8CC /* NSObject+PropertyDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+PropertyDictionary.m"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F54FE49B1430E860008EC8CC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F54FE4D51430F143008EC8CC /* libz.dylib in Frameworks */,
+				F54FE4A31430E860008EC8CC /* UIKit.framework in Frameworks */,
+				F54FE4A51430E860008EC8CC /* Foundation.framework in Frameworks */,
+				F54FE4A71430E860008EC8CC /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F54FE4931430E860008EC8CC = {
+			isa = PBXGroup;
+			children = (
+				F54FE4A81430E860008EC8CC /* ESNetworking */,
+				F54FE4A11430E860008EC8CC /* Frameworks */,
+				F54FE49F1430E860008EC8CC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F54FE49F1430E860008EC8CC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F54FE49E1430E860008EC8CC /* ESNetworking.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F54FE4A11430E860008EC8CC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F54FE4D41430F143008EC8CC /* libz.dylib */,
+				F54FE4A21430E860008EC8CC /* UIKit.framework */,
+				F54FE4A41430E860008EC8CC /* Foundation.framework */,
+				F54FE4A61430E860008EC8CC /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F54FE4A81430E860008EC8CC /* ESNetworking */ = {
+			isa = PBXGroup;
+			children = (
+				F54FE4B11430E860008EC8CC /* ESAppDelegate.h */,
+				F54FE4B21430E860008EC8CC /* ESAppDelegate.m */,
+				F54FE4E81431237B008EC8CC /* SampleNetworkManager.h */,
+				F54FE4E91431237B008EC8CC /* SampleNetworkManager.m */,
+				F54FE4D11430F081008EC8CC /* DemoViewController.h */,
+				F54FE4D21430F081008EC8CC /* DemoViewController.m */,
+				F54FE4E414312158008EC8CC /* WebViewController.h */,
+				F54FE4E514312158008EC8CC /* WebViewController.m */,
+				F54FE4EB14312C87008EC8CC /* TwitterSearchController.h */,
+				F54FE4EC14312C88008EC8CC /* TwitterSearchController.m */,
+				F54FE5201431381B008EC8CC /* Tweet.h */,
+				F54FE5211431381D008EC8CC /* Tweet.m */,
+				F54FE4B91430E87D008EC8CC /* Networking */,
+				F54FE4F2143137EF008EC8CC /* ESMutableDictionary */,
+				F54FE4F5143137F0008EC8CC /* ESObjectMap */,
+				F54FE4A91430E860008EC8CC /* Supporting Files */,
+			);
+			path = ESNetworking;
+			sourceTree = "<group>";
+		};
+		F54FE4A91430E860008EC8CC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F54FE4AA1430E860008EC8CC /* ESNetworking-Info.plist */,
+				F54FE4AB1430E860008EC8CC /* InfoPlist.strings */,
+				F54FE4AE1430E860008EC8CC /* main.m */,
+				F54FE4B01430E860008EC8CC /* ESNetworking-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F54FE4B91430E87D008EC8CC /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				F54FE4C81430E87D008EC8CC /* ESRunLoopOperation.h */,
+				F54FE4C91430E87D008EC8CC /* ESRunLoopOperation.m */,
+				F54FE4C51430E87D008EC8CC /* ESNetworkError.h */,
+				F54FE4C11430E87D008EC8CC /* ESHTTPOperation.h */,
+				F54FE4C21430E87D008EC8CC /* ESHTTPOperation.m */,
+				F54FE4C31430E87D008EC8CC /* ESJSONOperation.h */,
+				F54FE4C41430E87D008EC8CC /* ESJSONOperation.m */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		F54FE4F2143137EF008EC8CC /* ESMutableDictionary */ = {
+			isa = PBXGroup;
+			children = (
+				F54FE4F3143137F0008EC8CC /* ESMutableDictionary.h */,
+				F54FE4F4143137F0008EC8CC /* ESMutableDictionary.m */,
+			);
+			name = ESMutableDictionary;
+			path = UsefulBits/ESMutableDictionary;
+			sourceTree = SOURCE_ROOT;
+		};
+		F54FE4F5143137F0008EC8CC /* ESObjectMap */ = {
+			isa = PBXGroup;
+			children = (
+				F54FE4F6143137F1008EC8CC /* ESBaseModelObject.h */,
+				F54FE4F7143137F1008EC8CC /* ESBaseModelObject.m */,
+				F54FE4F8143137F1008EC8CC /* ESObjectMap.h */,
+				F54FE4F9143137F1008EC8CC /* ESObjectMap.m */,
+				F54FE4FA143137F1008EC8CC /* ESObjectMapFunctions.h */,
+				F54FE4FB143137F1008EC8CC /* ESObjectMapFunctions.m */,
+				F54FE4FC143137F1008EC8CC /* ESObjectProtocol.h */,
+				F54FE52714313A03008EC8CC /* NSObject+PropertyDictionary */,
+				F54FE4FF143137F1008EC8CC /* Property Maps */,
+			);
+			name = ESObjectMap;
+			path = UsefulBits/ESObjectMap;
+			sourceTree = SOURCE_ROOT;
+		};
+		F54FE4FF143137F1008EC8CC /* Property Maps */ = {
+			isa = PBXGroup;
+			children = (
+				F54FE500143137F1008EC8CC /* ESArrayPropertyMap.h */,
+				F54FE501143137F1008EC8CC /* ESArrayPropertyMap.m */,
+				F54FE502143137F1008EC8CC /* ESBOOLPropertyMap.h */,
+				F54FE503143137F1008EC8CC /* ESBOOLPropertyMap.m */,
+				F54FE504143137F1008EC8CC /* ESDoublePropertyMap.h */,
+				F54FE505143137F1008EC8CC /* ESDoublePropertyMap.m */,
+				F54FE506143137F1008EC8CC /* ESEpochDatePropertyMap.h */,
+				F54FE507143137F1008EC8CC /* ESEpochDatePropertyMap.m */,
+				F54FE508143137F1008EC8CC /* ESFloatPropertyMap.h */,
+				F54FE509143137F1008EC8CC /* ESFloatPropertyMap.m */,
+				F54FE50A143137F1008EC8CC /* ESIntPropertyMap.h */,
+				F54FE50B143137F1008EC8CC /* ESIntPropertyMap.m */,
+				F54FE50C143137F1008EC8CC /* ESObjectPropertyMap.h */,
+				F54FE50D143137F1008EC8CC /* ESObjectPropertyMap.m */,
+				F54FE50E143137F1008EC8CC /* ESPropertyMap.h */,
+				F54FE50F143137F1008EC8CC /* ESPropertyMap.m */,
+				F54FE510143137F1008EC8CC /* ESURLPropertyMap.h */,
+				F54FE511143137F1008EC8CC /* ESURLPropertyMap.m */,
+			);
+			path = "Property Maps";
+			sourceTree = "<group>";
+		};
+		F54FE52714313A03008EC8CC /* NSObject+PropertyDictionary */ = {
+			isa = PBXGroup;
+			children = (
+				F54FE52814313A03008EC8CC /* ESDeclaredPropertyAttributes.h */,
+				F54FE52914313A03008EC8CC /* ESDeclaredPropertyAttributes.m */,
+				F54FE52A14313A03008EC8CC /* ESDeclaredPropertyFunctions.h */,
+				F54FE52B14313A03008EC8CC /* ESDeclaredPropertyFunctions.m */,
+				F54FE52C14313A03008EC8CC /* NSObject+PropertyDictionary.h */,
+				F54FE52D14313A03008EC8CC /* NSObject+PropertyDictionary.m */,
+			);
+			name = "NSObject+PropertyDictionary";
+			path = "UsefulBits/NSObject+PropertyDictionary";
+			sourceTree = SOURCE_ROOT;
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F54FE49D1430E860008EC8CC /* ESNetworking */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F54FE4B61430E860008EC8CC /* Build configuration list for PBXNativeTarget "ESNetworking" */;
+			buildPhases = (
+				F54FE49A1430E860008EC8CC /* Sources */,
+				F54FE49B1430E860008EC8CC /* Frameworks */,
+				F54FE49C1430E860008EC8CC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ESNetworking;
+			productName = ESNetworking;
+			productReference = F54FE49E1430E860008EC8CC /* ESNetworking.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F54FE4951430E860008EC8CC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+				ORGANIZATIONNAME = "Doug Russell";
+			};
+			buildConfigurationList = F54FE4981430E860008EC8CC /* Build configuration list for PBXProject "ESNetworking" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = F54FE4931430E860008EC8CC;
+			productRefGroup = F54FE49F1430E860008EC8CC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F54FE49D1430E860008EC8CC /* ESNetworking */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F54FE49C1430E860008EC8CC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F54FE4AD1430E860008EC8CC /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F54FE49A1430E860008EC8CC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F54FE4AF1430E860008EC8CC /* main.m in Sources */,
+				F54FE4B31430E860008EC8CC /* ESAppDelegate.m in Sources */,
+				F54FE4CD1430E87D008EC8CC /* ESHTTPOperation.m in Sources */,
+				F54FE4CE1430E87D008EC8CC /* ESJSONOperation.m in Sources */,
+				F54FE4D01430E87D008EC8CC /* ESRunLoopOperation.m in Sources */,
+				F54FE4D31430F082008EC8CC /* DemoViewController.m in Sources */,
+				F54FE4E614312158008EC8CC /* WebViewController.m in Sources */,
+				F54FE4EA1431237B008EC8CC /* SampleNetworkManager.m in Sources */,
+				F54FE4ED14312C88008EC8CC /* TwitterSearchController.m in Sources */,
+				F54FE512143137F1008EC8CC /* ESMutableDictionary.m in Sources */,
+				F54FE513143137F1008EC8CC /* ESBaseModelObject.m in Sources */,
+				F54FE514143137F1008EC8CC /* ESObjectMap.m in Sources */,
+				F54FE515143137F1008EC8CC /* ESObjectMapFunctions.m in Sources */,
+				F54FE517143137F1008EC8CC /* ESArrayPropertyMap.m in Sources */,
+				F54FE518143137F1008EC8CC /* ESBOOLPropertyMap.m in Sources */,
+				F54FE519143137F1008EC8CC /* ESDoublePropertyMap.m in Sources */,
+				F54FE51A143137F1008EC8CC /* ESEpochDatePropertyMap.m in Sources */,
+				F54FE51B143137F1008EC8CC /* ESFloatPropertyMap.m in Sources */,
+				F54FE51C143137F1008EC8CC /* ESIntPropertyMap.m in Sources */,
+				F54FE51D143137F1008EC8CC /* ESObjectPropertyMap.m in Sources */,
+				F54FE51E143137F1008EC8CC /* ESPropertyMap.m in Sources */,
+				F54FE51F143137F1008EC8CC /* ESURLPropertyMap.m in Sources */,
+				F54FE52214313823008EC8CC /* Tweet.m in Sources */,
+				F54FE52E14313A03008EC8CC /* ESDeclaredPropertyAttributes.m in Sources */,
+				F54FE52F14313A03008EC8CC /* ESDeclaredPropertyFunctions.m in Sources */,
+				F54FE53014313A03008EC8CC /* NSObject+PropertyDictionary.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		F54FE4AB1430E860008EC8CC /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F54FE4AC1430E860008EC8CC /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F54FE4B41430E860008EC8CC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		F54FE4B51430E860008EC8CC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F54FE4B71430E860008EC8CC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ESNetworking/ESNetworking-Prefix.pch";
+				INFOPLIST_FILE = "ESNetworking/ESNetworking-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		F54FE4B81430E860008EC8CC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ESNetworking/ESNetworking-Prefix.pch";
+				INFOPLIST_FILE = "ESNetworking/ESNetworking-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F54FE4981430E860008EC8CC /* Build configuration list for PBXProject "ESNetworking" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F54FE4B41430E860008EC8CC /* Debug */,
+				F54FE4B51430E860008EC8CC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F54FE4B61430E860008EC8CC /* Build configuration list for PBXNativeTarget "ESNetworking" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F54FE4B71430E860008EC8CC /* Debug */,
+				F54FE4B81430E860008EC8CC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F54FE4951430E860008EC8CC /* Project object */;
+}
