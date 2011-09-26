@@ -150,18 +150,7 @@
 		F54FE4A81430E860008EC8CC /* ESNetworking */ = {
 			isa = PBXGroup;
 			children = (
-				F54FE4B11430E860008EC8CC /* ESAppDelegate.h */,
-				F54FE4B21430E860008EC8CC /* ESAppDelegate.m */,
-				F54FE4E81431237B008EC8CC /* SampleNetworkManager.h */,
-				F54FE4E91431237B008EC8CC /* SampleNetworkManager.m */,
-				F54FE4D11430F081008EC8CC /* DemoViewController.h */,
-				F54FE4D21430F081008EC8CC /* DemoViewController.m */,
-				F54FE4E414312158008EC8CC /* WebViewController.h */,
-				F54FE4E514312158008EC8CC /* WebViewController.m */,
-				F54FE4EB14312C87008EC8CC /* TwitterSearchController.h */,
-				F54FE4EC14312C88008EC8CC /* TwitterSearchController.m */,
-				F54FE5201431381B008EC8CC /* Tweet.h */,
-				F54FE5211431381D008EC8CC /* Tweet.m */,
+				F54FE5341431414B008EC8CC /* Demo */,
 				F54FE4B91430E87D008EC8CC /* Networking */,
 				F54FE4F2143137EF008EC8CC /* ESMutableDictionary */,
 				F54FE4F5143137F0008EC8CC /* ESObjectMap */,
@@ -260,6 +249,25 @@
 			name = "NSObject+PropertyDictionary";
 			path = "UsefulBits/NSObject+PropertyDictionary";
 			sourceTree = SOURCE_ROOT;
+		};
+		F54FE5341431414B008EC8CC /* Demo */ = {
+			isa = PBXGroup;
+			children = (
+				F54FE4B11430E860008EC8CC /* ESAppDelegate.h */,
+				F54FE4B21430E860008EC8CC /* ESAppDelegate.m */,
+				F54FE4E81431237B008EC8CC /* SampleNetworkManager.h */,
+				F54FE4E91431237B008EC8CC /* SampleNetworkManager.m */,
+				F54FE4D11430F081008EC8CC /* DemoViewController.h */,
+				F54FE4D21430F081008EC8CC /* DemoViewController.m */,
+				F54FE4E414312158008EC8CC /* WebViewController.h */,
+				F54FE4E514312158008EC8CC /* WebViewController.m */,
+				F54FE4EB14312C87008EC8CC /* TwitterSearchController.h */,
+				F54FE4EC14312C88008EC8CC /* TwitterSearchController.m */,
+				F54FE5201431381B008EC8CC /* Tweet.h */,
+				F54FE5211431381D008EC8CC /* Tweet.m */,
+			);
+			name = Demo;
+			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 

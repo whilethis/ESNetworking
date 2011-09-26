@@ -56,6 +56,7 @@
 											 self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh 
 																																	target:self 
 																																	action:@selector(refresh:)];
+											 // This should really be done off the main thread, but it's fine for this sample
 											 NSMutableArray *results = [NSMutableArray new];
 											 for (NSDictionary *dictionary in [JSON objectForKey:@"results"])
 											 {

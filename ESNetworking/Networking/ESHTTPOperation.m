@@ -49,7 +49,7 @@ static NSThread *_networkRunLoopThread = nil;
 + (void)networkRunLoopThreadEntry
 // This thread runs all of our network operation run loop callbacks.
 {
-	NSAssert(([NSThread currentThread] == [[self class] networkRunLoopThread]), @"");	
+	NSAssert(([NSThread currentThread] == [[self class] networkRunLoopThread]), @"Entered networkRunLoopThreadEntry from invalid thread");	
 	@autoreleasepool {
 		// Schedule a timer in the distant future to keep the run loop from simply immediately exiting
 		[NSTimer scheduledTimerWithTimeInterval:3600*24*365*100 target:nil selector:nil userInfo:nil repeats:NO];
@@ -60,7 +60,7 @@ static NSThread *_networkRunLoopThread = nil;
 			}
 		}
 	}
-	assert(NO);
+	NSAssert(NO, @"Exited networkRunLoopThreadEntry prematurely");
 }
 
 + (NSThread *)networkRunLoopThread
@@ -135,7 +135,7 @@ static inline NSUInteger GetOperationID(void)
 // Returns the effective run loop thread, that is, the one set by the user 
 // or, if that's not set, the network thread.
 {
-    NSThread *  result;
+    NSThread *result;
     result = self.runLoopThread;
     if (result == nil)
         result = [[self class] networkRunLoopThread];
@@ -313,7 +313,7 @@ static inline NSUInteger GetOperationID(void)
 - (BOOL)isContentTypeAcceptable
 {
 	NSString*  contentType;
-	assert(self.lastResponse != nil);
+	NSParameterAssert(self.lastResponse != nil);
 	contentType = [self.lastResponse MIMEType];
 	return ((self.acceptableContentTypes == nil) || ((contentType != nil) && [self.acceptableContentTypes containsObject:contentType]));
 }
@@ -324,17 +324,17 @@ static inline NSUInteger GetOperationID(void)
 // Called by QRunLoopOperation when the operation starts. This kicks of an
 // asynchronous NSURLConnection.
 {
-	assert(self.isActualRunLoopThread);
-	assert(self.state == kESOperationStateExecuting);
-	assert(self.defaultResponseSize > 0);
-	assert(self.maximumResponseSize > 0);
-	assert(self.defaultResponseSize <= self.maximumResponseSize);
-	assert(self.request != nil);
+	NSParameterAssert(self.isActualRunLoopThread);
+	NSParameterAssert(self.state == kESOperationStateExecuting);
+	NSParameterAssert(self.defaultResponseSize > 0);
+	NSParameterAssert(self.maximumResponseSize > 0);
+	NSParameterAssert(self.defaultResponseSize <= self.maximumResponseSize);
+	NSParameterAssert(self.request != nil);
 	// Create a connection that's scheduled in the required run loop modes.
-	assert(self.connection == nil);
+	NSParameterAssert(self.connection == nil);
 	NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:self.request delegate:self startImmediately:NO];
 	self.connection = connection;
-	assert(self.connection != nil);
+	NSParameterAssert(self.connection != nil);
 	for (NSString * mode in self.actualRunLoopModes)
 	{
 		[self.connection scheduleInRunLoop:[NSRunLoop currentRunLoop] forMode:mode];
@@ -346,8 +346,8 @@ static inline NSUInteger GetOperationID(void)
 // Called by ESRunLoopOperation when the operation has finished. We
 // do various bits of tidying up.
 {
-	assert(self.isActualRunLoopThread);
-	assert(self.state == kESOperationStateExecuting);
+	NSParameterAssert(self.isActualRunLoopThread);
+	NSParameterAssert(self.state == kESOperationStateExecuting);
 	[self.connection cancel];
 	self.connection = nil;
 	// If we have an output stream, close it at this point.	 We might never
@@ -391,10 +391,10 @@ static inline NSUInteger GetOperationID(void)
 - (NSURLRequest *)connection:(NSURLConnection *)connection willSendRequest:(NSURLRequest *)request redirectResponse:(NSURLResponse *)response
 // See comment in header.
 {
-	assert(self.isActualRunLoopThread);
-	assert(connection == self.connection);
+	NSParameterAssert(self.isActualRunLoopThread);
+	NSParameterAssert(connection == self.connection);
 #pragma unused(connection)
-	assert( (response == nil) || [response isKindOfClass:[NSHTTPURLResponse class]] );
+	NSParameterAssert( (response == nil) || [response isKindOfClass:[NSHTTPURLResponse class]] );
 	self.lastRequest = request;
 	self.lastResponse = (NSHTTPURLResponse *)response;
 	return request;
@@ -403,10 +403,10 @@ static inline NSUInteger GetOperationID(void)
 - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
 // See comment in header.
 {
-	assert(self.isActualRunLoopThread);
-	assert(connection == self.connection);
+	NSParameterAssert(self.isActualRunLoopThread);
+	NSParameterAssert(connection == self.connection);
 #pragma unused(connection)
-	assert([response isKindOfClass:[NSHTTPURLResponse class]]);
+	NSParameterAssert([response isKindOfClass:[NSHTTPURLResponse class]]);
 	self.lastResponse = (NSHTTPURLResponse *)response;
 	if (self.cancelOnStatusCodeError && !self.isStatusCodeAcceptable)
 	{
@@ -523,10 +523,10 @@ static inline NSUInteger GetOperationID(void)
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection
 // See comment in header.
 {
-	assert(self.isActualRunLoopThread);
-	assert(connection == self.connection);
+	NSParameterAssert(self.isActualRunLoopThread);
+	NSParameterAssert(connection == self.connection);
 #pragma unused(connection)
-	assert(self.lastResponse != nil);
+	NSParameterAssert(self.lastResponse != nil);
 	// Swap the data accumulator over to the response data so that we don't trigger a copy.
 	NSParameterAssert(_responseBody == nil);
 	_responseBody = _dataAccumulator;
@@ -562,10 +562,10 @@ static inline NSUInteger GetOperationID(void)
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
 // See comment in header.
 {
-	assert(self.isActualRunLoopThread);
-	assert(connection == self.connection);
+	NSParameterAssert(self.isActualRunLoopThread);
+	NSParameterAssert(connection == self.connection);
 #pragma unused(connection)
-	assert(error != nil);
+	NSParameterAssert(error != nil);
 	[self processRequest:error];
 }
 
