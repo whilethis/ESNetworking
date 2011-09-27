@@ -3,7 +3,11 @@
    File: Reachability.h
    Abstract: Basic demonstration of how to use the SystemConfiguration Reachablity APIs.
 
-   Version: 2.0.4ddg
+   Version: 2.0.5ddg
+ */
+
+/*
+ Minor additions made by Doug Russell in September 2011
  */
 
 /*
