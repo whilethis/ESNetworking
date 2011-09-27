@@ -1,5 +1,5 @@
 //
-//  WebViewController.m
+//  ImageViewController.m
 //
 //  Created by Doug Russell
 //  Copyright (c) 2011 Doug Russell. All rights reserved.
@@ -17,51 +17,54 @@
 //  limitations under the License.
 //  
 
-#import "WebViewController.h"
+#import "ImageViewController.h"
 #import "SampleNetworkManager.h"
+#import "UIImage+ESAdditions.h"
 
-@interface WebViewController ()
-@property (strong, nonatomic) UIWebView *webView;
+@interface ImageViewController ()
+@property (strong, nonatomic) UIImageView *imageView;
 @end
 
-@implementation WebViewController
-@synthesize webView=_webView;
+@implementation ImageViewController
+@synthesize imageView=_imageView;
 
 #pragma mark - View lifecycle
-
 - (void)loadView
 {
-	self.webView = [[UIWebView alloc] initWithFrame:[[UIScreen mainScreen] applicationFrame]];
-	self.webView.scalesPageToFit = YES;
-	self.view = self.webView;
+	self.imageView = [[UIImageView alloc] initWithFrame:[[UIScreen mainScreen] applicationFrame]];
+	self.imageView.backgroundColor = [UIColor blackColor];
+	self.imageView.contentMode = UIViewContentModeScaleAspectFit;
+	self.view = self.imageView;
 }
 
 - (void)viewDidLoad
 {
-	[super viewDidLoad];
+    [super viewDidLoad];
 	self.navigationItem.titleView = [[UIProgressView alloc] initWithProgressViewStyle:UIProgressViewStyleBar];
-	NSURL *url = [NSURL URLWithString:@"http://www.getitdownonpaper.com/journal"];
+	NSURL *url = [NSURL URLWithString:@"http://farm5.static.flickr.com/4114/4800356319_af057f6467_o.jpg"];
 	NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
 	__weak UIProgressView *progressView = (UIProgressView *)self.navigationItem.titleView;
-	__weak UIWebView *webView = self.webView;
+	__weak UIImageView *imageView = self.imageView;
 	ESHTTPOperation *op = 
 	[ESHTTPOperation newHTTPOperationWithRequest:request
-											work:nil 
+											work:^id<NSObject>(ESHTTPOperation *op, NSError *__autoreleasing *error) {
+												UIImage *image = [UIImage imageWithData:op.responseBody];
+												UIImage *scaledImage = [image scaledToSize:imageView.bounds.size];
+												return scaledImage;
+											} 
 									  completion:^(ESHTTPOperation *op) {
-										  if (op.error)
-										  {
-											  [progressView setProgress:0.0];
-											  [webView loadHTMLString:[NSString stringWithFormat:@"<H2>BAD THING!!!</H2><p>%@</p>", op.error] baseURL:nil];
-										  }
-										  else
-										  {
-											  [progressView setProgress:1.0];
-											  [webView loadData:op.responseBody 
-													   MIMEType:@"text/html" 
-											   textEncodingName:[NSString localizedNameOfStringEncoding:NSUTF8StringEncoding] 
-														baseURL:[NSURL URLWithString:@"http://www.getitdownonpaper.com"]];
-										  }
-									  }];
+												if (op.error)
+												{
+													[progressView setProgress:0.0];
+													[imageView setImage:nil];
+												}
+												else
+												{
+													[progressView setProgress:1.0];
+													[imageView setImage:op.processedResponse];
+												}
+											}];
+	op.maximumResponseSize = 10000000;
 	[op setDownloadProgressBlock:^(NSUInteger totalBytesRead, NSUInteger totalBytesExpectedToRead) {
 		[progressView setProgress:((float)totalBytesRead/(float)totalBytesExpectedToRead)];
 	}];
@@ -70,8 +73,8 @@
 
 - (void)viewDidUnload
 {
-	[super viewDidUnload];
-	self.webView = nil;
+    [super viewDidUnload];
+	self.imageView = nil;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation

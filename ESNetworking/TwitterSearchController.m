@@ -22,12 +22,10 @@
 #import "Tweet.h"
 
 @interface TwitterSearchController ()
-@property (strong, nonatomic) UISearchDisplayController *search;
 @property (strong, nonatomic) NSArray *results;
 @end
 
 @implementation TwitterSearchController
-@synthesize search=_search;
 @synthesize results=_results;
 
 - (id)init

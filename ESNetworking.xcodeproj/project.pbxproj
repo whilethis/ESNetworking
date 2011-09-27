@@ -40,6 +40,8 @@
 		F54FE53014313A03008EC8CC /* NSObject+PropertyDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = F54FE52D14313A03008EC8CC /* NSObject+PropertyDictionary.m */; };
 		F54FE53C14315B69008EC8CC /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = F54FE53B14315B69008EC8CC /* Reachability.m */; };
 		F54FE53F14315D69008EC8CC /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F54FE53E14315D69008EC8CC /* SystemConfiguration.framework */; };
+		F54FE54214317671008EC8CC /* ImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F54FE54114317670008EC8CC /* ImageViewController.m */; };
+		F54FE546143179BA008EC8CC /* UIImage+ESAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = F54FE545143179BA008EC8CC /* UIImage+ESAdditions.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -107,6 +109,10 @@
 		F54FE53A14315B69008EC8CC /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		F54FE53B14315B69008EC8CC /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		F54FE53E14315D69008EC8CC /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		F54FE54014317670008EC8CC /* ImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageViewController.h; sourceTree = "<group>"; };
+		F54FE54114317670008EC8CC /* ImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageViewController.m; sourceTree = "<group>"; };
+		F54FE544143179BA008EC8CC /* UIImage+ESAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ESAdditions.h"; sourceTree = "<group>"; };
+		F54FE545143179BA008EC8CC /* UIImage+ESAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ESAdditions.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +165,7 @@
 			children = (
 				F54FE5341431414B008EC8CC /* Demo */,
 				F54FE4B91430E87D008EC8CC /* Networking */,
+				F54FE543143179BA008EC8CC /* Categories */,
 				F54FE4F2143137EF008EC8CC /* ESMutableDictionary */,
 				F54FE4F5143137F0008EC8CC /* ESObjectMap */,
 				F54FE53914315B68008EC8CC /* Reachability */,
@@ -271,6 +278,8 @@
 				F54FE4E514312158008EC8CC /* WebViewController.m */,
 				F54FE4EB14312C87008EC8CC /* TwitterSearchController.h */,
 				F54FE4EC14312C88008EC8CC /* TwitterSearchController.m */,
+				F54FE54014317670008EC8CC /* ImageViewController.h */,
+				F54FE54114317670008EC8CC /* ImageViewController.m */,
 				F54FE5201431381B008EC8CC /* Tweet.h */,
 				F54FE5211431381D008EC8CC /* Tweet.m */,
 			);
@@ -285,6 +294,15 @@
 			);
 			path = Reachability;
 			sourceTree = SOURCE_ROOT;
+		};
+		F54FE543143179BA008EC8CC /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				F54FE544143179BA008EC8CC /* UIImage+ESAdditions.h */,
+				F54FE545143179BA008EC8CC /* UIImage+ESAdditions.m */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
@@ -375,6 +393,8 @@
 				F54FE52F14313A03008EC8CC /* ESDeclaredPropertyFunctions.m in Sources */,
 				F54FE53014313A03008EC8CC /* NSObject+PropertyDictionary.m in Sources */,
 				F54FE53C14315B69008EC8CC /* Reachability.m in Sources */,
+				F54FE54214317671008EC8CC /* ImageViewController.m in Sources */,
+				F54FE546143179BA008EC8CC /* UIImage+ESAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

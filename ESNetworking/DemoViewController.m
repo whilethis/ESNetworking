@@ -20,6 +20,7 @@
 #import "DemoViewController.h"
 #import "WebViewController.h"
 #import "TwitterSearchController.h"
+#import "ImageViewController.h"
 #import "SampleNetworkManager.h"
 
 @implementation DemoViewController
@@ -50,13 +51,12 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 2;
+    return 3;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"Cell";
-    
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil)
 	{
@@ -69,6 +69,9 @@
 			break;
 		case 1:
 			cell.textLabel.text = @"Twitter Search";
+			break;
+		case 2:
+			cell.textLabel.text = @"Big Image";
 			break;
 		default:
 			break;
@@ -91,6 +94,9 @@
 			break;
 		case 1:
 			[self.navigationController pushViewController:[TwitterSearchController new] animated:YES];
+			break;
+		case 2:
+			[self.navigationController pushViewController:[ImageViewController new] animated:YES];
 			break;
 		default:
 			break;
