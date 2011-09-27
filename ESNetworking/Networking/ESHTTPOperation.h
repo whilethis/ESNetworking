@@ -89,7 +89,7 @@ typedef void (^ESHTTPOperationDownloadBlock)(NSUInteger totalBytesRead, NSUInteg
 	typedef void (^ESHTTPOperationCompletionBlock)(ESHTTPOperation *op);
  */
 @property (copy, readonly) ESHTTPOperationCompletionBlock completion;
-@property (assign, readonly) NSUInteger operationID;
+@property (assign, readonly) NSInteger operationID;
 
 ///-----------------------------------------
 /// @name Configure before queuing operation

@@ -1,4 +1,5 @@
 #import "ESHTTPOperation.h"
+#import <libkern/OSAtomic.h>
 
 static dispatch_queue_t _processingQueue;
 dispatch_queue_t dispatch_get_processing_queue(void)
@@ -42,8 +43,6 @@ NSString * kESHTTPOperationErrorDomain = @"ESHTTPOperationErrorDomain";
 @synthesize cancelOnStatusCodeError=_cancelOnStatusCodeError;
 @synthesize cancelOnContentTypeError=_cancelOnContentTypeError;
 
-static NSUInteger _globalOperationIDCounter = 10000;
-static NSLock *lock = nil;
 static NSThread *_networkRunLoopThread = nil;
 
 + (void)networkRunLoopThreadEntry
@@ -78,18 +77,10 @@ static NSThread *_networkRunLoopThread = nil;
 	return _networkRunLoopThread;
 }
 
-static inline NSUInteger GetOperationID(void)
+static int32_t _globalOperationIDCounter = 10000;
+static inline int32_t GetOperationID(void)
 {
-	static dispatch_once_t onceToken;
-	dispatch_once(&onceToken, ^{
-		lock = [[NSLock alloc] init];
-	});
-	NSUInteger operationID;
-	[lock lock];
-	_globalOperationIDCounter++;
-	operationID = _globalOperationIDCounter;
-	[lock unlock];
-	return operationID;
+	return OSAtomicIncrement32(&_globalOperationIDCounter);;
 }
 
 #pragma mark * Initialise and finalise
@@ -149,12 +140,18 @@ static inline NSUInteger GetOperationID(void)
 
 - (void)setUploadProgressBlock:(ESHTTPOperationUploadBlock)uploadProgress
 {
+	if (self.state != kESOperationStateInited)
+		[NSException raise:@"Set Upload Progress Block in Invalid State" 
+					format:@"Attempted to setUploadProgressBlock while in state: %d. UploadProgressBlock may only be set prior to queueing operation", self.state];
 	self.uploadProgress = uploadProgress;
 }
 
 - (void)setDownloadProgressBlock:(ESHTTPOperationDownloadBlock)downloadProgress
 {
-    self.downloadProgress = downloadProgress;
+	if (self.state != kESOperationStateInited)
+		[NSException raise:@"Set Download Progress Block in Invalid State" 
+					format:@"Attempted to setDownloadProgressBlock while in state: %d. DownloadProgressBlock may only be set prior to queueing operation", self.state];
+    self.downloadProgress = [downloadProgress copy];
 }
 
 + (BOOL)automaticallyNotifiesObserversOfAcceptableStatusCodes
@@ -169,10 +166,9 @@ static inline NSUInteger GetOperationID(void)
 
 - (void)setAcceptableStatusCodes:(NSIndexSet *)newValue
 {
-	if (self.state != kESOperationStateInited)
-	{
-		NSAssert(NO, @"Attempted to setAcceptableStatusCodes with invalid state: %d", self.state);
-	}
+	if (self.state != kESOperationStateInited) // this is probably not correct, you could set status codes up until didReceiveResponse, which is in execution state
+		[NSException raise:@"Set Acceptable Status Codes in Invalid State" 
+					format:@"Attempted to setAcceptableStatusCodes while in state: %d. AcceptableStatusCode may only be set prior to queueing operation", self.state];
 	else
 	{
 		if (newValue != _acceptableStatusCodes)
@@ -201,10 +197,9 @@ static inline NSUInteger GetOperationID(void)
 
 - (void)setAcceptableContentTypes:(NSSet *)newValue
 {
-	if (self.state != kESOperationStateInited)
-	{
-		NSAssert(NO, @"Attempted to setAcceptableContentTypes with invalid state: %d", self.state);
-	}
+	if (self.state != kESOperationStateInited) // this is probably not correct, you could set content types up until didReceiveResponse, which is in execution state
+		[NSException raise:@"Set Download Progress Block in Invalid State" 
+					format:@"Attempted to setAcceptableContentTypes while in state: %d. AcceptableContentTypes may only be set prior to queueing operation", self.state];
 	else
 	{
 		if (newValue != _acceptableContentTypes)
