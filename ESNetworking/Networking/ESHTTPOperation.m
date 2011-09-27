@@ -184,6 +184,11 @@ static inline NSUInteger GetOperationID(void)
 	}
 }
 
++ (NSIndexSet *)defaultAcceptableStatusCodes 
+{
+	return [NSIndexSet indexSetWithIndexesInRange:NSMakeRange(200, 100)];
+}
+
 + (BOOL)automaticallyNotifiesObserversOfAcceptableContentTypes
 {
 	return NO;
@@ -209,6 +214,11 @@ static inline NSUInteger GetOperationID(void)
 			[self didChangeValueForKey:@"acceptableContentTypes"];
 		}
 	}
+}
+
++ (NSSet *)defaultAcceptableContentTypes 
+{
+	return nil;
 }
 
 + (BOOL)automaticallyNotifiesObserversOfOutputStream
@@ -304,7 +314,7 @@ static inline NSUInteger GetOperationID(void)
 	NSParameterAssert(self.lastResponse != nil);
 	acceptableStatusCodes = self.acceptableStatusCodes;
 	if (acceptableStatusCodes == nil)
-		acceptableStatusCodes = [NSIndexSet indexSetWithIndexesInRange:NSMakeRange(200, 100)];
+		acceptableStatusCodes = [[self class] defaultAcceptableStatusCodes];
 	NSParameterAssert(acceptableStatusCodes != nil);
 	statusCode = [self.lastResponse statusCode];
 	return (statusCode >= 0) && [acceptableStatusCodes containsIndex:(NSUInteger)statusCode];
@@ -315,7 +325,10 @@ static inline NSUInteger GetOperationID(void)
 	NSString*  contentType;
 	NSParameterAssert(self.lastResponse != nil);
 	contentType = [self.lastResponse MIMEType];
-	return ((self.acceptableContentTypes == nil) || ((contentType != nil) && [self.acceptableContentTypes containsObject:contentType]));
+	NSSet *acceptableContentTypes = self.acceptableContentTypes;
+	if (acceptableContentTypes == nil)
+		acceptableContentTypes = [[self class] defaultAcceptableContentTypes];
+	return ((acceptableContentTypes == nil) || ((contentType != nil) && [acceptableContentTypes containsObject:contentType]));
 }
 
 #pragma mark * Start and finish overrides

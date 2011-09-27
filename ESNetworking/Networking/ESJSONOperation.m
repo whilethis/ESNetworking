@@ -31,24 +31,6 @@
 						  success:(ESJSONOperationSuccessBlock)success
 						  failure:(ESJSONOperationFailureBlock)failure
 {	 
-	return [self newJSONOperationWithRequest:urlRequest 
-					   acceptableStatusCodes:[self defaultAcceptableStatusCodes] 
-					  acceptableContentTypes:[self defaultAcceptableContentTypes] 
-									 success:^(ESJSONOperation *op, id json) {
-										 if (success)
-											 success(op, json);
-									 } failure:^(ESJSONOperation *op) {
-										 if (failure)
-											 failure(op);
-									 }];
-}
-
-+ (id)newJSONOperationWithRequest:(NSURLRequest *)urlRequest
-			acceptableStatusCodes:(NSIndexSet *)acceptableStatusCodes
-		   acceptableContentTypes:(NSSet *)acceptableContentTypes
-						  success:(ESJSONOperationSuccessBlock)success
-						  failure:(ESJSONOperationFailureBlock)failure
-{
 	ESJSONOperation *op = 
 	[[[self class] alloc] initWithRequest:urlRequest 
 									 work:^id<NSObject>(ESHTTPOperation *op, NSError *__autoreleasing *error) {
@@ -96,14 +78,7 @@
 									   }
 								   }
 							   }];
-	[op setAcceptableStatusCodes:acceptableStatusCodes];
-	[op setAcceptableContentTypes:acceptableContentTypes];
 	return op;
-}
-
-+ (NSIndexSet *)defaultAcceptableStatusCodes 
-{
-	return [NSIndexSet indexSetWithIndexesInRange:NSMakeRange(200, 100)];
 }
 
 + (NSSet *)defaultAcceptableContentTypes 

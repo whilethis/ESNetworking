@@ -107,6 +107,12 @@ typedef void (^ESHTTPOperationDownloadBlock)(NSUInteger totalBytesRead, NSUInteg
  */
 @property (copy, readwrite) NSIndexSet *acceptableStatusCodes;
 /**
+ Returns an `NSIndexSet` object containing the ranges of acceptable HTTP status codes (http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html)
+ 
+ By default, this is the range 200 to 299, inclusive.
+ */
++ (NSIndexSet *)defaultAcceptableStatusCodes;
+/**
  * Acceptable content types
  * 
  * http://www.ietf.org/rfc/rfc2616.txt
@@ -116,6 +122,12 @@ typedef void (^ESHTTPOperationDownloadBlock)(NSUInteger totalBytesRead, NSUInteg
  * @see cancelOnContentTypeError
  */
 @property (copy, readwrite) NSSet *acceptableContentTypes;
+/**
+ Returns an `NSSet` object containing the acceptable HTTP content type (http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17)
+ 
+ By default, this is nil, implying any content type is acceptable
+ */
++ (NSSet *)defaultAcceptableContentTypes;
 /**
  * Determines is NSURLConnection will cancel on -connection:didReceiveResponse: is responses status code is not in acceptableStatusCodes
  * 

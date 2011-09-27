@@ -55,40 +55,12 @@ typedef void (^ESJSONOperationFailureBlock)(ESJSONOperation *op);
 						  success:(ESJSONOperationSuccessBlock)success
 						  failure:(ESJSONOperationFailureBlock)failure;
 
-/**
- Creates and returns an `AFJSONRequestOperation` object and sets the specified success and failure callbacks, as well as the status codes and content types that are acceptable for a successful request.
- 
-	typedef void (^ESJSONOperationSuccessBlock)(ESJSONOperation *op, id JSON);
- 
-	typedef void (^ESJSONOperationFailureBlock)(ESJSONOperation *op);
- 
- @param urlRequest The request object to be loaded asynchronously during execution of the operation
- @param acceptableStatusCodes An `NSIndexSet` object that specifies the ranges of acceptable status codes. If you specify nil, all status codes will be considered acceptable.
- @param acceptableContentTypes An `NSSet` object that specifies the acceptable content types. If you specify nil, all content types will be considered acceptable.
- @param success A block object to be executed when the JSON request operation finishes successfully, with a status code in the 2xx range, and with an acceptable content type (e.g. `application/json`). This block has no return value and takes three arguments, the request sent from the client, the response received from the server, and the JSON object created from the response data of request.
- @param failure A block object to be executed when the JSON request operation finishes unsuccessfully, or that finishes successfully, but encountered an error while parsing the resonse data as JSON. This block has no return value and takes three arguments, the request sent from the client, the response received from the server, and the error describing the network or parsing error that occurred.
- 
- @return A new JSON request operation
- */
-+ (id)newJSONOperationWithRequest:(NSURLRequest *)urlRequest
-			acceptableStatusCodes:(NSIndexSet *)acceptableStatusCodes
-		   acceptableContentTypes:(NSSet *)acceptableContentTypes
-						  success:(ESJSONOperationSuccessBlock)success
-						  failure:(ESJSONOperationFailureBlock)failure;
-
 ///----------------------------------
 /// @name Getting Default HTTP Values
 ///----------------------------------
 
 /**
- Returns an `NSIndexSet` object containing the ranges of acceptable HTTP status codes (http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html) used in newJSONOperationWithRequest:success and newJSONOperationWithRequest:success:failure.
- 
- By default, this is the range 200 to 299, inclusive.
- */
-+ (NSIndexSet *)defaultAcceptableStatusCodes;
-
-/**
- Returns an `NSSet` object containing the acceptable HTTP content type (http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17) used in operationWithRequest:success and operationWithRequest:success:failure.
+ Returns an `NSSet` object containing the acceptable HTTP content type (http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17)
  
  By default, this contains `application/json`, `application/x-javascript`, `text/javascript`, `text/x-javascript`, `text/x-json`, `text/json`, and `text/plain`
  */
