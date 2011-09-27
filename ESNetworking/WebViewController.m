@@ -40,28 +40,30 @@
 {
 	[super viewDidLoad];
 	self.navigationItem.titleView = [[UIProgressView alloc] initWithProgressViewStyle:UIProgressViewStyleBar];
-	NSURL *url = [NSURL URLWithString:@"http://www.43folders.com/2009/03/25/blogs-turbocharged"];
+	NSURL *url = [NSURL URLWithString:@"http://www.getitdownonpaper.com/journal"];
 	NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+	__weak UIProgressView *progressView = (UIProgressView *)self.navigationItem.titleView;
+	__weak UIWebView *webView = self.webView;
 	ESHTTPOperation *op = 
 	[ESHTTPOperation newHTTPOperationWithRequest:request
 											work:nil 
 									  completion:^(ESHTTPOperation *op) {
 										  if (op.error)
 										  {
-											  [(UIProgressView *)self.navigationItem.titleView setProgress:0.0];
-											  [self.webView loadHTMLString:[NSString stringWithFormat:@"<H2>BAD THING!!!</H2><p>%@</p>", op.error] baseURL:nil];
+											  [progressView setProgress:0.0];
+											  [webView loadHTMLString:[NSString stringWithFormat:@"<H2>BAD THING!!!</H2><p>%@</p>", op.error] baseURL:nil];
 										  }
 										  else
 										  {
-											  [(UIProgressView *)self.navigationItem.titleView setProgress:1.0];
-											  [self.webView loadData:op.responseBody 
-															MIMEType:@"text/html" 
-													textEncodingName:[NSString localizedNameOfStringEncoding:NSUTF8StringEncoding] 
-															 baseURL:[NSURL URLWithString:@"http://www.43folders.com"]];
+											  [progressView setProgress:1.0];
+											  [webView loadData:op.responseBody 
+													   MIMEType:@"text/html" 
+											   textEncodingName:[NSString localizedNameOfStringEncoding:NSUTF8StringEncoding] 
+														baseURL:[NSURL URLWithString:@"http://www.getitdownonpaper.com"]];
 										  }
 									  }];
 	[op setDownloadProgressBlock:^(NSUInteger totalBytesRead, NSUInteger totalBytesExpectedToRead) {
-		[(UIProgressView *)self.navigationItem.titleView setProgress:((float)totalBytesRead/(float)totalBytesExpectedToRead)];
+		[progressView setProgress:((float)totalBytesRead/(float)totalBytesExpectedToRead)];
 	}];
 	[[SampleNetworkManager sharedManager] addOperation:op];
 }

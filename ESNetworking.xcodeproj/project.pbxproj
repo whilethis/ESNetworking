@@ -38,6 +38,8 @@
 		F54FE52E14313A03008EC8CC /* ESDeclaredPropertyAttributes.m in Sources */ = {isa = PBXBuildFile; fileRef = F54FE52914313A03008EC8CC /* ESDeclaredPropertyAttributes.m */; };
 		F54FE52F14313A03008EC8CC /* ESDeclaredPropertyFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = F54FE52B14313A03008EC8CC /* ESDeclaredPropertyFunctions.m */; };
 		F54FE53014313A03008EC8CC /* NSObject+PropertyDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = F54FE52D14313A03008EC8CC /* NSObject+PropertyDictionary.m */; };
+		F54FE53C14315B69008EC8CC /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = F54FE53B14315B69008EC8CC /* Reachability.m */; };
+		F54FE53F14315D69008EC8CC /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F54FE53E14315D69008EC8CC /* SystemConfiguration.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -102,6 +104,9 @@
 		F54FE52B14313A03008EC8CC /* ESDeclaredPropertyFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESDeclaredPropertyFunctions.m; sourceTree = "<group>"; };
 		F54FE52C14313A03008EC8CC /* NSObject+PropertyDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+PropertyDictionary.h"; sourceTree = "<group>"; };
 		F54FE52D14313A03008EC8CC /* NSObject+PropertyDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+PropertyDictionary.m"; sourceTree = "<group>"; };
+		F54FE53A14315B69008EC8CC /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		F54FE53B14315B69008EC8CC /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		F54FE53E14315D69008EC8CC /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +114,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F54FE53F14315D69008EC8CC /* SystemConfiguration.framework in Frameworks */,
 				F54FE4D51430F143008EC8CC /* libz.dylib in Frameworks */,
 				F54FE4A31430E860008EC8CC /* UIKit.framework in Frameworks */,
 				F54FE4A51430E860008EC8CC /* Foundation.framework in Frameworks */,
@@ -140,6 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				F54FE4D41430F143008EC8CC /* libz.dylib */,
+				F54FE53E14315D69008EC8CC /* SystemConfiguration.framework */,
 				F54FE4A21430E860008EC8CC /* UIKit.framework */,
 				F54FE4A41430E860008EC8CC /* Foundation.framework */,
 				F54FE4A61430E860008EC8CC /* CoreGraphics.framework */,
@@ -154,6 +161,7 @@
 				F54FE4B91430E87D008EC8CC /* Networking */,
 				F54FE4F2143137EF008EC8CC /* ESMutableDictionary */,
 				F54FE4F5143137F0008EC8CC /* ESObjectMap */,
+				F54FE53914315B68008EC8CC /* Reachability */,
 				F54FE4A91430E860008EC8CC /* Supporting Files */,
 			);
 			path = ESNetworking;
@@ -269,6 +277,15 @@
 			name = Demo;
 			sourceTree = "<group>";
 		};
+		F54FE53914315B68008EC8CC /* Reachability */ = {
+			isa = PBXGroup;
+			children = (
+				F54FE53A14315B69008EC8CC /* Reachability.h */,
+				F54FE53B14315B69008EC8CC /* Reachability.m */,
+			);
+			path = Reachability;
+			sourceTree = SOURCE_ROOT;
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -357,6 +374,7 @@
 				F54FE52E14313A03008EC8CC /* ESDeclaredPropertyAttributes.m in Sources */,
 				F54FE52F14313A03008EC8CC /* ESDeclaredPropertyFunctions.m in Sources */,
 				F54FE53014313A03008EC8CC /* NSObject+PropertyDictionary.m in Sources */,
+				F54FE53C14315B69008EC8CC /* Reachability.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -50,12 +50,14 @@
 	NSString *urlString = @"http://search.twitter.com/search.json?q=Test";
 	NSURL *url = [NSURL URLWithString:urlString];
 	NSURLRequest *request = [NSURLRequest requestWithURL:url];
+	__weak TwitterSearchController *weakSelf = self;
+	__weak UINavigationItem *navigationItem = self.navigationItem;
 	ESJSONOperation *op = 
 	[ESJSONOperation newJSONOperationWithRequest:request 
 										 success:^(ESJSONOperation *op, id JSON) {
-											 self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh 
-																																	target:self 
-																																	action:@selector(refresh:)];
+											 navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh 
+																															   target:weakSelf 
+																															   action:@selector(refresh:)];
 											 // This should really be done off the main thread, but it's fine for this sample
 											 NSMutableArray *results = [NSMutableArray new];
 											 for (NSDictionary *dictionary in [JSON objectForKey:@"results"])
@@ -64,17 +66,17 @@
 												 if (tweet)
 													 [results addObject:tweet];
 											 }
-											 self.results = results;
-											 [self.tableView reloadData];
+											 [weakSelf setResults:results];
+											 [[weakSelf tableView] reloadData];
 										 } failure:^(ESJSONOperation *op) {
-											 self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh 
-																																	target:self 
-																																	action:@selector(refresh:)];
+											 navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh 
+																															   target:weakSelf 
+																															   action:@selector(refresh:)];
 											 Tweet *tweet = [Tweet new];
 											 tweet.user = @"Error";
 											 tweet.text = @"Unable to complete search";
-											 self.results = [NSArray arrayWithObject:tweet];
-											 [self.tableView reloadData];
+											 [weakSelf setResults:[NSArray arrayWithObject:tweet]];
+											 [[weakSelf tableView] reloadData];
 										 }];
 	[[SampleNetworkManager sharedManager] addOperation:op];
 }
