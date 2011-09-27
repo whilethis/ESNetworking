@@ -20,6 +20,7 @@
 #import "DemoViewController.h"
 #import "WebViewController.h"
 #import "TwitterSearchController.h"
+#import "SampleNetworkManager.h"
 
 @implementation DemoViewController
 
@@ -79,6 +80,11 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+	[tableView deselectRowAtIndexPath:indexPath animated:YES];
+	// If the users internet connection is down, they've most likely already been alerted, 
+	// but we'll remind them any time they initiate an action that requires a connection
+	if (![[SampleNetworkManager sharedManager] hasInternets])
+		[[SampleNetworkManager sharedManager] noConnectionAlert];
 	switch (indexPath.row) {
 		case 0:
 			[self.navigationController pushViewController:[WebViewController new] animated:YES];

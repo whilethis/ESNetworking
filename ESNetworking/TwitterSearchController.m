@@ -89,6 +89,10 @@
 
 - (void)refresh:(id)sender
 {
+	// If the users internet connection is down, they've most likely already been alerted, 
+	// but we'll remind them any time they initiate an action that requires a connection
+	if (![[SampleNetworkManager sharedManager] hasInternets])
+		[[SampleNetworkManager sharedManager] noConnectionAlert];
 	[self pollTwitter];
 }
 

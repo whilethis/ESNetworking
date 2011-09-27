@@ -15,5 +15,6 @@
 + (id)sharedManager;
 - (void)addOperation:(ESHTTPOperation *)op;
 - (BOOL)hasInternets;
+- (void)noConnectionAlert;
 
 @end

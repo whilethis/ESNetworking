@@ -19,6 +19,7 @@
 
 #import "ESAppDelegate.h"
 #import "DemoViewController.h"
+#import "SampleNetworkManager.h"
 
 @implementation ESAppDelegate
 
@@ -26,6 +27,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+	[SampleNetworkManager sharedManager];
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 	self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:[DemoViewController new]];
     self.window.backgroundColor = [UIColor whiteColor];

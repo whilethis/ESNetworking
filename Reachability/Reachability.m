@@ -179,7 +179,6 @@ static void logNetworkStatus_(const char *name, int line, NetworkStatus status)
 //	[super dealloc];
 } // dealloc
 
-
 - (Reachability *)initWithReachabilityRef:(SCNetworkReachabilityRef) ref 
 {
 	self = [super init];
@@ -387,14 +386,11 @@ const SCNetworkReachabilityFlags kConnectionDown =  kSCNetworkReachabilityFlagsC
 	
 } // networkStatusForFlags:
 
-
 - (NetworkStatus)currentReachabilityStatus 
 {
 	NSAssert(reachabilityRef, @"currentReachabilityStatus called with NULL reachabilityRef");
-	
 	SCNetworkReachabilityFlags flags = 0;
 	NetworkStatus status = kNotReachable;
-	
 	if (SCNetworkReachabilityGetFlags(reachabilityRef, &flags)) 
 	{
 //		logReachabilityFlags(flags);
@@ -418,7 +414,6 @@ const SCNetworkReachabilityFlags kConnectionDown =  kSCNetworkReachabilityFlagsC
 	}
 	return NO;
 } // isReachable
-
 
 - (BOOL)isConnectionRequired 
 {
