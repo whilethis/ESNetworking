@@ -148,43 +148,85 @@ typedef void (^ESHTTPOperationDownloadBlock)(NSUInteger totalBytesRead, NSUInteg
 ///--------------------------------------
 /// @name Configure before receiving data
 ///--------------------------------------
+
 // Typically you would change these in -connection:didReceiveResponse:, but 
 // it is possible to change them up to the point where -connection:didReceiveData: 
 // is called for the first time (that is, you could override -connection:didReceiveData: 
 // and change these before calling super).
 
-// IMPORTANT: If you set a response stream, ESHTTPOperation calls the response 
-// stream synchronously.  This is fine for file and memory streams, but it would 
-// not work well for other types of streams (like a bound pair).
-
-@property (strong, readwrite) NSOutputStream *outputStream; // defaults to nil, which puts response into responseBody
-@property (assign, readwrite) NSUInteger defaultResponseSize; // default is 1 MB, ignored if responseOutputStream is set
-@property (assign, readwrite) NSUInteger maximumResponseSize; // default is 4 MB, ignored if responseOutputStream is set
-// defaults are 1/4 of the above on embedded
+/**
+ * NSOutputStream used to write out data returned by connection. Useful for downloading large files directly to disk, etc.
+ * 
+ * Defaults to nil, which puts response into responseBody
+ * 
+ * @warning If you set a response stream, ESHTTPOperation calls the response 
+ * stream synchronously.  This is fine for file and memory streams, but it would 
+ * not work well for other types of streams (like a bound pair).
+ */
+@property (strong, readwrite) NSOutputStream *outputStream;
+/**
+ * Used for hinting capacity on data accumulator used by connection.
+ *
+ * This value is ignored if outputStream is set
+ * 
+ * Default is 1MB.
+ */
+@property (assign, readwrite) NSUInteger defaultResponseSize;
+/**
+ * Used by connection to prevent unbounded memory consumption during download.
+ * 
+ * This value is ignored if outputStream is set
+ * 
+ * Default is 4MB.
+ */
+@property (assign, readwrite) NSUInteger maximumResponseSize;
 
 ///--------------------------
 /// @name Response validation
 ///--------------------------
 
-@property (assign, readonly, getter=isStatusCodeAcceptable)  BOOL statusCodeAcceptable;
+/**
+ * Validates that status code returned in lastResponse is contained in acceptableStatusCodes
+ */
+@property (assign, readonly, getter=isStatusCodeAcceptable) BOOL statusCodeAcceptable;
+/**
+ * Validates that MIMEType returned in lastResponse is contained in acceptableContentTypes
+ */
 @property (assign, readonly, getter=isContentTypeAcceptable) BOOL contentTypeAcceptable;
-
-// Things that are only meaningful after the operation is finished.
 
 ///--------------------------------------
 /// @name Response
 ///--------------------------------------
+
 // error property inherited from ESRunLoopOperation
-@property (copy, readonly) NSURLRequest *lastRequest;       
-@property (copy, readonly) NSHTTPURLResponse *lastResponse;       
+/**
+ * 
+ */
+@property (copy, readonly) NSURLRequest *lastRequest;
+/**
+ * 
+ */
+@property (copy, readonly) NSHTTPURLResponse *lastResponse;
+/**
+ * 
+ */
 @property (strong, readonly) NSData *responseBody;
+/**
+ * 
+ */
 @property (strong, readonly) id processedResponse;
 
 ///---------------
 /// @name Progress
 ///---------------
 
+/**
+ * 
+ */
 - (void)setUploadProgressBlock:(ESHTTPOperationUploadBlock)uploadProgress;
+/**
+ * 
+ */
 - (void)setDownloadProgressBlock:(ESHTTPOperationDownloadBlock)downloadProgress;
 
 @end

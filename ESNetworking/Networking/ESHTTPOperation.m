@@ -104,16 +104,11 @@ static inline int32_t GetOperationID(void)
 		self = nil;
 	if (self != nil)
 	{
-#if TARGET_OS_EMBEDDED || TARGET_IPHONE_SIMULATOR
-		static const NSUInteger kPlatformReductionFactor = 4;
-#else
-		static const NSUInteger kPlatformReductionFactor = 1;
-#endif
 		_completion = [completion copy];
 		_work = [work copy];
 		_request = [request copy];
-		_defaultResponseSize = 1 * 1024 * 1024 / kPlatformReductionFactor;
-		_maximumResponseSize = 4 * 1024 * 1024 / kPlatformReductionFactor;
+		_defaultResponseSize = 1 * 1024 * 1024;
+		_maximumResponseSize = 4 * 1024 * 1024;
 		_firstData = YES;
 		_operationID = GetOperationID();
 	}
