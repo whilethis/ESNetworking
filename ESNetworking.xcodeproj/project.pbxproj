@@ -7,15 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F535B7EA143AB2FC00643EFF /* ESHTTPOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = F535B7DE143AB2FC00643EFF /* ESHTTPOperation.m */; };
+		F535B7EB143AB2FC00643EFF /* ESJSONOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = F535B7E0143AB2FC00643EFF /* ESJSONOperation.m */; };
+		F535B7EC143AB2FC00643EFF /* ESRunLoopOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = F535B7E3143AB2FC00643EFF /* ESRunLoopOperation.m */; };
+		F535B7ED143AB2FC00643EFF /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = F535B7E6143AB2FC00643EFF /* Reachability.m */; };
+		F535B7EE143AB2FC00643EFF /* UIImage+ESAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = F535B7E9143AB2FC00643EFF /* UIImage+ESAdditions.m */; };
 		F54FE4A31430E860008EC8CC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F54FE4A21430E860008EC8CC /* UIKit.framework */; };
 		F54FE4A51430E860008EC8CC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F54FE4A41430E860008EC8CC /* Foundation.framework */; };
 		F54FE4A71430E860008EC8CC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F54FE4A61430E860008EC8CC /* CoreGraphics.framework */; };
 		F54FE4AD1430E860008EC8CC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F54FE4AB1430E860008EC8CC /* InfoPlist.strings */; };
 		F54FE4AF1430E860008EC8CC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F54FE4AE1430E860008EC8CC /* main.m */; };
 		F54FE4B31430E860008EC8CC /* ESAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F54FE4B21430E860008EC8CC /* ESAppDelegate.m */; };
-		F54FE4CD1430E87D008EC8CC /* ESHTTPOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = F54FE4C21430E87D008EC8CC /* ESHTTPOperation.m */; };
-		F54FE4CE1430E87D008EC8CC /* ESJSONOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = F54FE4C41430E87D008EC8CC /* ESJSONOperation.m */; };
-		F54FE4D01430E87D008EC8CC /* ESRunLoopOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = F54FE4C91430E87D008EC8CC /* ESRunLoopOperation.m */; };
 		F54FE4D31430F082008EC8CC /* DemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F54FE4D21430F081008EC8CC /* DemoViewController.m */; };
 		F54FE4D51430F143008EC8CC /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F54FE4D41430F143008EC8CC /* libz.dylib */; };
 		F54FE4E614312158008EC8CC /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F54FE4E514312158008EC8CC /* WebViewController.m */; };
@@ -38,13 +40,22 @@
 		F54FE52E14313A03008EC8CC /* ESDeclaredPropertyAttributes.m in Sources */ = {isa = PBXBuildFile; fileRef = F54FE52914313A03008EC8CC /* ESDeclaredPropertyAttributes.m */; };
 		F54FE52F14313A03008EC8CC /* ESDeclaredPropertyFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = F54FE52B14313A03008EC8CC /* ESDeclaredPropertyFunctions.m */; };
 		F54FE53014313A03008EC8CC /* NSObject+PropertyDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = F54FE52D14313A03008EC8CC /* NSObject+PropertyDictionary.m */; };
-		F54FE53C14315B69008EC8CC /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = F54FE53B14315B69008EC8CC /* Reachability.m */; };
 		F54FE53F14315D69008EC8CC /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F54FE53E14315D69008EC8CC /* SystemConfiguration.framework */; };
 		F54FE54214317671008EC8CC /* ImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F54FE54114317670008EC8CC /* ImageViewController.m */; };
-		F54FE546143179BA008EC8CC /* UIImage+ESAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = F54FE545143179BA008EC8CC /* UIImage+ESAdditions.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F535B7DD143AB2FC00643EFF /* ESHTTPOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESHTTPOperation.h; sourceTree = "<group>"; };
+		F535B7DE143AB2FC00643EFF /* ESHTTPOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESHTTPOperation.m; sourceTree = "<group>"; };
+		F535B7DF143AB2FC00643EFF /* ESJSONOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESJSONOperation.h; sourceTree = "<group>"; };
+		F535B7E0143AB2FC00643EFF /* ESJSONOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESJSONOperation.m; sourceTree = "<group>"; };
+		F535B7E1143AB2FC00643EFF /* ESNetworkError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESNetworkError.h; sourceTree = "<group>"; };
+		F535B7E2143AB2FC00643EFF /* ESRunLoopOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESRunLoopOperation.h; sourceTree = "<group>"; };
+		F535B7E3143AB2FC00643EFF /* ESRunLoopOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESRunLoopOperation.m; sourceTree = "<group>"; };
+		F535B7E5143AB2FC00643EFF /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		F535B7E6143AB2FC00643EFF /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		F535B7E8143AB2FC00643EFF /* UIImage+ESAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ESAdditions.h"; sourceTree = "<group>"; };
+		F535B7E9143AB2FC00643EFF /* UIImage+ESAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ESAdditions.m"; sourceTree = "<group>"; };
 		F54FE49E1430E860008EC8CC /* ESNetworking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ESNetworking.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F54FE4A21430E860008EC8CC /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		F54FE4A41430E860008EC8CC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -55,13 +66,6 @@
 		F54FE4B01430E860008EC8CC /* ESNetworking-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ESNetworking-Prefix.pch"; sourceTree = "<group>"; };
 		F54FE4B11430E860008EC8CC /* ESAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ESAppDelegate.h; sourceTree = "<group>"; };
 		F54FE4B21430E860008EC8CC /* ESAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ESAppDelegate.m; sourceTree = "<group>"; };
-		F54FE4C11430E87D008EC8CC /* ESHTTPOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESHTTPOperation.h; sourceTree = "<group>"; };
-		F54FE4C21430E87D008EC8CC /* ESHTTPOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESHTTPOperation.m; sourceTree = "<group>"; };
-		F54FE4C31430E87D008EC8CC /* ESJSONOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESJSONOperation.h; sourceTree = "<group>"; };
-		F54FE4C41430E87D008EC8CC /* ESJSONOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESJSONOperation.m; sourceTree = "<group>"; };
-		F54FE4C51430E87D008EC8CC /* ESNetworkError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESNetworkError.h; sourceTree = "<group>"; };
-		F54FE4C81430E87D008EC8CC /* ESRunLoopOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESRunLoopOperation.h; sourceTree = "<group>"; };
-		F54FE4C91430E87D008EC8CC /* ESRunLoopOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESRunLoopOperation.m; sourceTree = "<group>"; };
 		F54FE4D11430F081008EC8CC /* DemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoViewController.h; sourceTree = "<group>"; };
 		F54FE4D21430F081008EC8CC /* DemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoViewController.m; sourceTree = "<group>"; };
 		F54FE4D41430F143008EC8CC /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
@@ -106,13 +110,9 @@
 		F54FE52B14313A03008EC8CC /* ESDeclaredPropertyFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESDeclaredPropertyFunctions.m; sourceTree = "<group>"; };
 		F54FE52C14313A03008EC8CC /* NSObject+PropertyDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+PropertyDictionary.h"; sourceTree = "<group>"; };
 		F54FE52D14313A03008EC8CC /* NSObject+PropertyDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+PropertyDictionary.m"; sourceTree = "<group>"; };
-		F54FE53A14315B69008EC8CC /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
-		F54FE53B14315B69008EC8CC /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		F54FE53E14315D69008EC8CC /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		F54FE54014317670008EC8CC /* ImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageViewController.h; sourceTree = "<group>"; };
 		F54FE54114317670008EC8CC /* ImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageViewController.m; sourceTree = "<group>"; };
-		F54FE544143179BA008EC8CC /* UIImage+ESAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ESAdditions.h"; sourceTree = "<group>"; };
-		F54FE545143179BA008EC8CC /* UIImage+ESAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ESAdditions.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +131,41 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F535B7DC143AB2FC00643EFF /* ESNetworking */ = {
+			isa = PBXGroup;
+			children = (
+				F535B7DD143AB2FC00643EFF /* ESHTTPOperation.h */,
+				F535B7DE143AB2FC00643EFF /* ESHTTPOperation.m */,
+				F535B7DF143AB2FC00643EFF /* ESJSONOperation.h */,
+				F535B7E0143AB2FC00643EFF /* ESJSONOperation.m */,
+				F535B7E1143AB2FC00643EFF /* ESNetworkError.h */,
+				F535B7E2143AB2FC00643EFF /* ESRunLoopOperation.h */,
+				F535B7E3143AB2FC00643EFF /* ESRunLoopOperation.m */,
+			);
+			name = ESNetworking;
+			path = UsefulBits/ESNetworking;
+			sourceTree = SOURCE_ROOT;
+		};
+		F535B7E4143AB2FC00643EFF /* Reachability */ = {
+			isa = PBXGroup;
+			children = (
+				F535B7E5143AB2FC00643EFF /* Reachability.h */,
+				F535B7E6143AB2FC00643EFF /* Reachability.m */,
+			);
+			name = Reachability;
+			path = UsefulBits/Reachability;
+			sourceTree = SOURCE_ROOT;
+		};
+		F535B7E7143AB2FC00643EFF /* UIImage+ESAdditions */ = {
+			isa = PBXGroup;
+			children = (
+				F535B7E8143AB2FC00643EFF /* UIImage+ESAdditions.h */,
+				F535B7E9143AB2FC00643EFF /* UIImage+ESAdditions.m */,
+			);
+			name = "UIImage+ESAdditions";
+			path = "UsefulBits/UIImage+ESAdditions";
+			sourceTree = SOURCE_ROOT;
+		};
 		F54FE4931430E860008EC8CC = {
 			isa = PBXGroup;
 			children = (
@@ -164,11 +199,11 @@
 			isa = PBXGroup;
 			children = (
 				F54FE5341431414B008EC8CC /* Demo */,
-				F54FE4B91430E87D008EC8CC /* Networking */,
-				F54FE543143179BA008EC8CC /* Categories */,
+				F535B7DC143AB2FC00643EFF /* ESNetworking */,
+				F535B7E4143AB2FC00643EFF /* Reachability */,
+				F535B7E7143AB2FC00643EFF /* UIImage+ESAdditions */,
 				F54FE4F2143137EF008EC8CC /* ESMutableDictionary */,
 				F54FE4F5143137F0008EC8CC /* ESObjectMap */,
-				F54FE53914315B68008EC8CC /* Reachability */,
 				F54FE4A91430E860008EC8CC /* Supporting Files */,
 			);
 			path = ESNetworking;
@@ -183,20 +218,6 @@
 				F54FE4B01430E860008EC8CC /* ESNetworking-Prefix.pch */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		F54FE4B91430E87D008EC8CC /* Networking */ = {
-			isa = PBXGroup;
-			children = (
-				F54FE4C81430E87D008EC8CC /* ESRunLoopOperation.h */,
-				F54FE4C91430E87D008EC8CC /* ESRunLoopOperation.m */,
-				F54FE4C51430E87D008EC8CC /* ESNetworkError.h */,
-				F54FE4C11430E87D008EC8CC /* ESHTTPOperation.h */,
-				F54FE4C21430E87D008EC8CC /* ESHTTPOperation.m */,
-				F54FE4C31430E87D008EC8CC /* ESJSONOperation.h */,
-				F54FE4C41430E87D008EC8CC /* ESJSONOperation.m */,
-			);
-			path = Networking;
 			sourceTree = "<group>";
 		};
 		F54FE4F2143137EF008EC8CC /* ESMutableDictionary */ = {
@@ -286,24 +307,6 @@
 			name = Demo;
 			sourceTree = "<group>";
 		};
-		F54FE53914315B68008EC8CC /* Reachability */ = {
-			isa = PBXGroup;
-			children = (
-				F54FE53A14315B69008EC8CC /* Reachability.h */,
-				F54FE53B14315B69008EC8CC /* Reachability.m */,
-			);
-			path = Reachability;
-			sourceTree = SOURCE_ROOT;
-		};
-		F54FE543143179BA008EC8CC /* Categories */ = {
-			isa = PBXGroup;
-			children = (
-				F54FE544143179BA008EC8CC /* UIImage+ESAdditions.h */,
-				F54FE545143179BA008EC8CC /* UIImage+ESAdditions.m */,
-			);
-			path = Categories;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -368,9 +371,6 @@
 			files = (
 				F54FE4AF1430E860008EC8CC /* main.m in Sources */,
 				F54FE4B31430E860008EC8CC /* ESAppDelegate.m in Sources */,
-				F54FE4CD1430E87D008EC8CC /* ESHTTPOperation.m in Sources */,
-				F54FE4CE1430E87D008EC8CC /* ESJSONOperation.m in Sources */,
-				F54FE4D01430E87D008EC8CC /* ESRunLoopOperation.m in Sources */,
 				F54FE4D31430F082008EC8CC /* DemoViewController.m in Sources */,
 				F54FE4E614312158008EC8CC /* WebViewController.m in Sources */,
 				F54FE4EA1431237B008EC8CC /* SampleNetworkManager.m in Sources */,
@@ -392,9 +392,12 @@
 				F54FE52E14313A03008EC8CC /* ESDeclaredPropertyAttributes.m in Sources */,
 				F54FE52F14313A03008EC8CC /* ESDeclaredPropertyFunctions.m in Sources */,
 				F54FE53014313A03008EC8CC /* NSObject+PropertyDictionary.m in Sources */,
-				F54FE53C14315B69008EC8CC /* Reachability.m in Sources */,
 				F54FE54214317671008EC8CC /* ImageViewController.m in Sources */,
-				F54FE546143179BA008EC8CC /* UIImage+ESAdditions.m in Sources */,
+				F535B7EA143AB2FC00643EFF /* ESHTTPOperation.m in Sources */,
+				F535B7EB143AB2FC00643EFF /* ESJSONOperation.m in Sources */,
+				F535B7EC143AB2FC00643EFF /* ESRunLoopOperation.m in Sources */,
+				F535B7ED143AB2FC00643EFF /* Reachability.m in Sources */,
+				F535B7EE143AB2FC00643EFF /* UIImage+ESAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
