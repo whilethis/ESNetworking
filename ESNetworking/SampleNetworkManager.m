@@ -10,15 +10,13 @@
 #import "Reachability.h"
 
 @interface SampleNetworkManager ()
-@property (strong, nonatomic) NSOperationQueue *networkTransferQueue;
+@property (strong, nonatomic, readonly) NSOperationQueue *networkTransferQueue;
+@property (strong, nonatomic, readonly) Reachability *internetReachability;
 @end
 
 @implementation SampleNetworkManager
-{
-@private
-	Reachability *_internetReachability;
-}
 @synthesize networkTransferQueue=_networkTransferQueue;
+@synthesize internetReachability=_internetReachability;
 
 + (id)sharedManager
 {
@@ -49,6 +47,7 @@
 - (void)dealloc // bit unnecessary, but nice for book keeping
 {
 	[_internetReachability stopNotifier];
+	[_networkTransferQueue removeObserver:self forKeyPath:@"operationCount"];
 	[[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
@@ -72,7 +71,7 @@
 
 - (BOOL)hasInternets
 {
-	return [_internetReachability isReachable];
+	return [self.internetReachability isReachable];
 }
 
 // Respond to changes in reachability
@@ -83,6 +82,7 @@
 	[NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(noConnectionAlert) object:nil];
 	switch (netStatus) {
 		case kNotReachable:
+			// Wait a few seconds to make sure this isn't just a blip in connectivity
 			[self performSelector:@selector(noConnectionAlert) withObject:nil afterDelay:4.0];
 			break;
 		case kReachableViaWWAN:
