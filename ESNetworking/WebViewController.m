@@ -40,7 +40,7 @@
 {
 	[super viewDidLoad];
 	self.navigationItem.titleView = [[UIProgressView alloc] initWithProgressViewStyle:UIProgressViewStyleBar];
-	NSURL *url = [NSURL URLWithString:@"http://www.getitdownonpaper.com/journal"];
+	NSURL *url = [NSURL URLWithString:@"http://www.getitdownonpaper.com/"];
 	NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
 	__weak UIProgressView *progressView = (UIProgressView *)self.navigationItem.titleView;
 	__weak UIWebView *webView = self.webView;
